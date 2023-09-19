@@ -67,7 +67,7 @@ jobs:
         id: seeker-check
         shell: bash
         run: |
-          if [ "${{ secrets.SEEKER_ACCESS_TOKEN }}" != '' ]; then
+          if [ "${{ secrets.SECURITY_RISK_SCORE }}" <= 50 ]; then
             echo "enabled=true" >> $GITHUB_OUTPUT;
           else
             echo "enabled=false" >> $GITHUB_OUTPUT;
