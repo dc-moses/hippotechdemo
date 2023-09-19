@@ -27,6 +27,7 @@ jobs:
     env:
       SEEKER_SERVER_URL: ${{ vars.SEEKER_SERVER_URL }}
       SEEKER_PROJECT_KEY: ${{ vars.SEEKER_PROJECT_KEY }}
+      SECURITY_RISK_SCORE: ${{vars.SECURITY_RISK_SCORE }}
     
     steps:
       - uses: actions/checkout@v3
@@ -67,7 +68,7 @@ jobs:
         id: seeker-check
         shell: bash
         run: |
-          if [ "${{ secrets.SECURITY_RISK_SCORE }}" <= '50' ]; then
+          if [ "${{ vars.SECURITY_RISK_SCORE }}" <= '50' ]; then
             echo "enabled=true" >> $GITHUB_OUTPUT;
           else
             echo "enabled=false" >> $GITHUB_OUTPUT;
