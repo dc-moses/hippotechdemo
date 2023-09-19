@@ -68,7 +68,7 @@ jobs:
         id: seeker-check
         shell: bash
         run: |
-          if [ "${{ vars.SECURITY_RISK_SCORE }}" < '60' ]; then
+          if [ "${{ vars.SECURITY_RISK_SCORE }}" == 'enabled' ]; then
             echo "enabled=true" >> $GITHUB_OUTPUT;
           else
             echo "enabled=false" >> $GITHUB_OUTPUT;
