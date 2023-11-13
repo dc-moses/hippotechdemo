@@ -1,0 +1,6 @@
+Native Compiler invocation: /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java -classpath /Users/dylanm/buildtools/apache-maven-3.9.5/boot/plexus-classworlds-2.7.0.jar -Dclassworlds.conf=/Users/dylanm/buildtools/apache-maven-3.9.5/bin/m2.conf -Dmaven.home=/Users/dylanm/buildtools/apache-maven-3.9.5 -Dlibrary.jansi.path=/Users/dylanm/buildtools/apache-maven-3.9.5/lib/jansi-native -Dmaven.multiModuleProjectDirectory=/Users/dylanm/repos/hippotechdemo/java-api org.codehaus.plexus.classworlds.launcher.Launcher -B -DskipTests -DskipITs clean install -f /Users/dylanm/repos/hippotechdemo/java-api/pom.xml
+Working directory: /Users/dylanm/repos/hippotechdemo/java-api
+Comptype: java
+* Configuring /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java as a Java compiler
+* Configuring /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/javac as a Java compiler
+* Configuring jar tool for creating and manipulating jar files

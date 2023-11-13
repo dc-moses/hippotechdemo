@@ -1,0 +1,5 @@
+Encountered compiler invocation for first time, configuring it: /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java
+[STATUS] Using comptype java
+[STATUS] Environment Variables
+	Environment variable logging disabled.
+Added template compiler configuration instance /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/emit/snps-rkceubtul4gc/config/e6c149337ee7d597e165b278e9639ae6/coverity_config.xml

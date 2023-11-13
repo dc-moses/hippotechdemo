@@ -1,0 +1,3 @@
+Native Compiler and extra args: ./ 
+Working directory: /Users/dylanm/repos/hippotechdemo
+Comptype: ruby

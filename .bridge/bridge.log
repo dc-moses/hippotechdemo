@@ -1,0 +1,192 @@
+2023-10-26 15:25:06.1734 EDT [Synopsys Bridge] INFO: Starting adapters for stage srm
+2023-10-26 15:25:06.1739 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Controller
+2023-10-26 15:25:06.1740 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Initializer
+2023-10-26 15:25:07.3505 EDT [SRM Initializer] INFO: Provided value for resource 'srm.initialized'
+2023-10-26 15:25:07.3511 EDT [SRM Initializer] INFO: Adapter finished
+2023-10-26 15:25:07.3519 EDT [Synopsys Bridge] INFO: New adapter loaded: Set Project ID
+2023-10-26 15:25:07.3521 EDT [Synopsys Bridge] INFO: Starting Adapter: Set Project ID
+2023-10-26 15:25:07.3523 EDT [Set Project ID] INFO: Provided value for resource 'srm.project.id'
+2023-10-26 15:25:07.3523 EDT [Set Project ID] INFO: Adapter finished
+2023-10-26 15:25:08.8191 EDT [SRM Controller] INFO: Found existing Coverity "2023.6.1" tool installation in "/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1"
+2023-10-26 15:25:09.1915 EDT [SRM Controller] INFO: Found Blackduck Detect jar file "/Users/dylanm/.synopsys/bridge/tools/synopsys-detect/9.0.0/synopsys-detect-9.0.0.jar" in "/Users/dylanm/.synopsys/bridge/tools/synopsys-detect/9.0.0"
+2023-10-26 15:25:09.2036 EDT [SRM Controller] INFO: Provided value for resource 'blackduck.scan.full'
+2023-10-26 15:25:09.2037 EDT [Synopsys Bridge] INFO: Starting adapters for stage srm-sca
+2023-10-26 15:25:09.2037 EDT [Synopsys Bridge] INFO: Starting adapters for stage srm-sast
+2023-10-26 15:25:09.2037 EDT [Synopsys Bridge] INFO: Starting adapters for stage srm-processing
+2023-10-26 15:25:09.2037 EDT [Synopsys Bridge] INFO: Starting adapters for stage srm-post-processing
+2023-10-26 15:25:09.2051 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Blackduck Execution
+2023-10-26 15:25:09.2051 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Coverity Capture
+2023-10-26 15:25:09.2052 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Analysis Tool Input
+2023-10-26 15:25:09.2052 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Analysis Source Input
+2023-10-26 15:25:09.2052 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Create Analysis
+2023-10-26 15:25:09.2052 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Artifacts Uploader
+2023-10-26 15:25:09.2052 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Source Zipper
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Analysis Set Branch
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Start Analysis
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Policies
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Findings
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Summary
+2023-10-26 15:25:09.2053 EDT [Synopsys Bridge] INFO: Starting Adapter: SRM Waiter
+2023-10-26 15:25:09.2211 EDT [SRM Controller] INFO: Adapter finished
+2023-10-26 15:25:09.2316 EDT [Synopsys Bridge] INFO: New adapter loaded: Set Default Execution Path for Coverity
+2023-10-26 15:25:09.2318 EDT [Synopsys Bridge] INFO: New adapter loaded: Upload Source Code For SAST Assessment By Default
+2023-10-26 15:25:09.2319 EDT [Synopsys Bridge] INFO: Starting Adapter: Set Default Execution Path for Coverity
+2023-10-26 15:25:09.2320 EDT [Synopsys Bridge] INFO: Starting Adapter: Upload Source Code For SAST Assessment By Default
+2023-10-26 15:25:09.2323 EDT [Set Default Execution Path for Coverity] INFO: Provided value for resource 'coverity.execution.path'
+2023-10-26 15:25:09.2324 EDT [Set Default Execution Path for Coverity] INFO: Adapter finished
+2023-10-26 15:25:09.2340 EDT [Upload Source Code For SAST Assessment By Default] INFO: Provided value for resource 'srm.analysis.source.upload'
+2023-10-26 15:25:09.2344 EDT [Upload Source Code For SAST Assessment By Default] INFO: Adapter finished
+2023-10-26 15:25:09.2364 EDT [Synopsys Bridge] INFO: New adapter loaded: Set Default Execution Path for Blackduck
+2023-10-26 15:25:09.2365 EDT [Synopsys Bridge] INFO: Starting Adapter: Set Default Execution Path for Blackduck
+2023-10-26 15:25:09.2370 EDT [Set Default Execution Path for Blackduck] INFO: Provided value for resource 'blackduck.execution.path'
+2023-10-26 15:25:09.2371 EDT [Set Default Execution Path for Blackduck] INFO: Adapter finished
+2023-10-26 15:25:09.3141 EDT [SRM Blackduck Execution] INFO: Running command /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java -jar /Users/dylanm/.synopsys/bridge/tools/synopsys-detect/9.0.0/synopsys-detect-9.0.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect --detect.tools=DETECTOR --blackduck.offline.mode=true --blackduck.offline.mode.force.bdio=true
+2023-10-26 15:25:09.0000 EDT [SRM Blackduck Execution] [main] WARNING: --- Detect-Self-Updater:  Self-Update feature is disabled because of the following reasons:
+2023-10-26 15:25:09.0000 EDT [SRM Blackduck Execution] [main] WARNING: --- Detect-Self-Updater:  Detect in offline mode is incompatible with the Self-Update feature.
+2023-10-26 15:25:09.0000 EDT [SRM Blackduck Execution] [main] WARNING: --- Detect-Self-Updater:  Black Duck URL is required for the Self-Update feature.
+2023-10-26 15:25:10.2073 EDT [SRM Blackduck Execution] INFO: ______     _            _
+2023-10-26 15:25:10.2074 EDT [SRM Blackduck Execution] INFO: |  _  \   | |          | |
+2023-10-26 15:25:10.2074 EDT [SRM Blackduck Execution] INFO: | | | |___| |_ ___  ___| |_
+2023-10-26 15:25:10.2074 EDT [SRM Blackduck Execution] INFO: | | | / _ \ __/ _ \/ __| __|
+2023-10-26 15:25:10.2075 EDT [SRM Blackduck Execution] INFO: | |/ /  __/ ||  __/ (__| |_
+2023-10-26 15:25:10.2075 EDT [SRM Blackduck Execution] INFO: |___/ \___|\__\___|\___|\__|
+2023-10-26 15:25:10.2075 EDT [SRM Blackduck Execution] INFO: 
+2023-10-26 15:25:10.3083 EDT [SRM Blackduck Execution] INFO: 
+2023-10-26 15:25:10.3084 EDT [SRM Blackduck Execution] INFO: Detect Version: 9.0.0
+2023-10-26 15:25:10.3084 EDT [SRM Blackduck Execution] INFO: 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Current property values:
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- --property = value [notes]
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ------------------------------------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- blackduck.offline.mode = true [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- blackduck.offline.mode.force.bdio = true [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.bdio.file.name = scan [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.bdio.output.path = /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/bdio/blackduck_artifact [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.cleanup = false [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.excluded.directories = /Users/dylanm/repos/hippotechdemo/.bridge [env] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.output.path = /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- detect.tools = DETECTOR [cmd] 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ------------------------------------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Detect build date: 2023-09-12
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Source directory: /Users/dylanm/repos/hippotechdemo
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Output directory: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Run directory: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/runs/2023-10-26-19-25-10-280
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Docker tool will not be run.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Bazel tool will not be run.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Will include the Detectors tool.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Searching for detectors.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Evaluating detectors. This may take a while.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Running executable >/usr/bin/git config --get remote.origin.url
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Process return code: 0
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Running executable >/usr/bin/git rev-parse --abbrev-ref HEAD
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Process return code: 0
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Running executable >/usr/bin/git rev-parse HEAD
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Process return code: 0
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ======================================================================================================
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Detector Report
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ======================================================================================================
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 	/Users/dylanm/repos/hippotechdemo (depth 0)
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 		Git: SUCCESS
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 			Found file: /Users/dylanm/repos/hippotechdemo/.git
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 			Found executable: /usr/bin/git
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Detectors actions finished.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Project name: dc-moses/hippotechdemo
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Project version: main
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Signature Scanner tool will not be run.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Vulnerability Impact Analysis tool will not be run.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ----------------------------------
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- IaC Scanner tool will not be run.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Creating status file: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/runs/2023-10-26-19-25-10-280/status/status.json
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Skipping cleanup, it is disabled.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ======== Detect Status ========
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- GIT: SUCCESS
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Overall Status: SUCCESS - Detect exited successfully.
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- ===============================
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- 
+2023-10-26 15:25:10.0000 EDT [SRM Blackduck Execution] [main] INFO: --- Detect duration: 00h 00m 00s 556ms
+2023-10-26 15:25:10.8496 EDT [SRM Blackduck Execution] INFO: Provided value for resource 'srm.analysis.sca.completed'
+2023-10-26 15:25:10.8498 EDT [SRM Blackduck Execution] INFO: Provided value for resource 'srm.analysis.sca.artifacts.path'
+2023-10-26 15:25:10.8499 EDT [SRM Blackduck Execution] INFO: Provided value for resource 'blackduck.version'
+2023-10-26 15:25:10.8506 EDT [SRM Blackduck Execution] INFO: Adapter finished
+2023-10-26 15:25:10.8671 EDT [SRM Coverity Capture] INFO: Identified workflow: SRM
+2023-10-26 15:25:10.8674 EDT [SRM Coverity Capture] INFO: command: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/coverity capture --dir /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir -o analyze.location=srm -o commit.srm.project-id=32 -o commit.srm.token-file=/Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/api-token.txt -o commit.srm.url=https://con05.srm.synopsys.com/
+2023-10-26 15:25:10.8883 EDT [SRM Coverity Capture] INFO: coverity 2023.6.1 covcli-2023.6-push-10
+2023-10-26 15:25:10.9188 EDT [SRM Coverity Capture] INFO: Cloud analysis is enabled.
+2023-10-26 15:25:12.0665 EDT [SRM Coverity Capture] INFO: Resolved SRM project ID 32 to project name "HIPPOTECHDEMO"
+2023-10-26 15:25:12.0668 EDT [SRM Coverity Capture] INFO: Caching is enabled.
+2023-10-26 15:25:12.0670 EDT [SRM Coverity Capture] INFO: Requesting authorization token for Software Risk Manager project "HIPPOTECHDEMO"
+2023-10-26 15:25:12.8980 EDT [SRM Coverity Capture] INFO: Authorization token granted for Software Risk Manager project "HIPPOTECHDEMO"
+2023-10-26 15:25:12.9000 EDT [SRM Coverity Capture] INFO: Executing command: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-manage-emit --dir /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir create
+2023-10-26 15:25:12.9106 EDT [SRM Coverity Capture] INFO: Next Software Risk Manager authorization token refresh: 2023-10-26T15:53:12-04:00
+2023-10-26 15:25:13.1541 EDT [SRM Coverity Capture] INFO: Telemetry is disabled
+2023-10-26 15:25:13.1629 EDT [SRM Coverity Capture] INFO: Executing command: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-manage-emit --dir /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir list-capture-diagnostics
+2023-10-26 15:25:13.1912 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --compiler clang --comptype clangcc --template
+2023-10-26 15:25:13.7372 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:13.7372 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml
+2023-10-26 15:25:13.7373 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the compilers: clang clang++
+2023-10-26 15:25:13.7439 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --compiler gcc --comptype clangcc --template
+2023-10-26 15:25:14.0628 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:14.0629 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml
+2023-10-26 15:25:14.0629 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the compilers: g++ gcc
+2023-10-26 15:25:14.0674 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --compiler java --comptype java --template
+2023-10-26 15:25:14.3986 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:14.3986 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml
+2023-10-26 15:25:14.3987 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the compilers: apt java javac javaw
+2023-10-26 15:25:14.3987 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: jar
+2023-10-26 15:25:14.4037 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --compiler kotlinc --comptype kotlinc --template
+2023-10-26 15:25:14.7241 EDT [SRM Coverity Capture] WARNING: Template config template-java-config-0 already exists for java and will be reused. 
+2023-10-26 15:25:14.7242 EDT [SRM Coverity Capture] WARNING: Template config template-apt-config-0 already exists for apt and will be reused. 
+2023-10-26 15:25:14.7242 EDT [SRM Coverity Capture] WARNING: Template config template-javaw-config-0 already exists for javaw and will be reused. 
+2023-10-26 15:25:14.7264 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:14.7264 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml
+2023-10-26 15:25:14.7264 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the compilers: kotlin kotlinc
+2023-10-26 15:25:14.7264 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: android kotlin-module
+2023-10-26 15:25:14.7312 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --compiler go --comptype go --template
+2023-10-26 15:25:15.0519 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:15.0519 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml
+2023-10-26 15:25:15.0520 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the compilers: go
+2023-10-26 15:25:15.0520 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: go-module
+2023-10-26 15:25:15.0566 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml --javascript
+2023-10-26 15:25:15.0764 EDT [SRM Coverity Capture] INFO: [NOTE] This Coverity installation only supports record with source for "javascript". Attempts to capture source files for this language without specifying --record-with-source to cov-build will be ignored.
+2023-10-26 15:25:15.3734 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:15.3735 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml
+2023-10-26 15:25:15.3735 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: capture-config-files html javascript jsx typescript vue
+2023-10-26 15:25:15.3784 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml --php
+2023-10-26 15:25:15.7044 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:15.7046 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml
+2023-10-26 15:25:15.7047 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: capture-config-files php
+2023-10-26 15:25:15.7124 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml --python
+2023-10-26 15:25:16.0424 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:16.0425 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml
+2023-10-26 15:25:16.0425 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: capture-config-files python
+2023-10-26 15:25:16.0482 EDT [SRM Coverity Capture] INFO: Executing action Configure build compiler: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-configure -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml --ruby
+2023-10-26 15:25:16.3713 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:16.3714 EDT [SRM Coverity Capture] INFO: Generated coverity_config.xml at location /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml
+2023-10-26 15:25:16.3714 EDT [SRM Coverity Capture] INFO: Successfully generated configuration for the filesystem capture patterns: capture-config-files ruby
+2023-10-26 15:25:16.3767 EDT [SRM Coverity Capture] INFO: Loading compiler config '/Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml'
+2023-10-26 15:25:16.3783 EDT [SRM Coverity Capture] INFO: Loading compiler config '/Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/nonbuild-compiler-configs/coverity_config.xml'
+2023-10-26 15:25:16.4106 EDT [SRM Coverity Capture] INFO: Executing action Invoke build capture: /Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/cov-build --dir /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir -c /Users/dylanm/repos/hippotechdemo/.bridge/SRM Coverity Capture/idir/point-and-scan/build-compiler-configs/coverity_config.xml --append-log --no-security-da --record-with-source --bytecode-caching mvn -B -DskipTests -DskipITs clean install -f /Users/dylanm/repos/hippotechdemo/java-api/pom.xml
+2023-10-26 15:25:16.4809 EDT [SRM Coverity Capture] INFO: Coverity Build Capture (64-bit) version 2023.6.1 on Darwin 22.6.0 x86_64
+2023-10-26 15:25:16.4809 EDT [SRM Coverity Capture] INFO: Internal version numbers: 4ae07d0526 p-2023.6-push-61
+2023-10-26 15:25:16.4810 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:16.5195 EDT [SRM Coverity Capture] INFO: 
+2023-10-26 15:25:16.9324 EDT [SRM Coverity Capture] INFO: 2023-10-26T19:25:16Z [INFO] Will interact with cache service at https://con05.srm.synopsys.com:443/api/cache
+2023-10-26 15:25:17.6241 EDT [SRM Coverity Capture] INFO: 2023-10-26T19:25:17Z [INFO] Will interact with cache service at https://con05.srm.synopsys.com:443/api/cache
+2023-10-26 15:25:20.3201 EDT [SRM Coverity Capture] INFO: dyld[92780]: terminating because inserted dylib '/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' could not be loaded: tried: '/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (fat file, but missing compatible architecture (have 'x86_64,i386', need 'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (no such file), '/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (fat file, but missing compatible architecture (have 'x86_64,i386', need 'arm64'))
+2023-10-26 15:25:20.3202 EDT [SRM Coverity Capture] INFO: dyld[92780]: tried: '/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (fat file, but missing compatible architecture (have 'x86_64,i386', need 'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (no such file), '/Users/dylanm/.synopsys/bridge/tools/cov-thin-client/2023.6.1/bin/libcapture-macosx.dylib' (fat file, but missing compatible architecture (have 'x86_64,i386', need 'arm64'))

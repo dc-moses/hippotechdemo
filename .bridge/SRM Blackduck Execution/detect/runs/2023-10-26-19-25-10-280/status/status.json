@@ -1,0 +1,66 @@
+{
+  "formatVersion": "0.5.0",
+  "detectVersion": "9.0.0",
+  "projectName": "dc-moses/hippotechdemo",
+  "projectVersion": "main",
+  "detectors": [
+    {
+      "folder": "/Users/dylanm/repos/hippotechdemo",
+      "detectorType": "GIT",
+      "detectorName": "Git",
+      "detectorAccuracy": "HIGH",
+      "extracted": true,
+      "status": "SUCCESS",
+      "statusCode": "PASSED",
+      "statusReason": "Passed",
+      "relevantFiles": [],
+      "explanations": [
+        "Found file: /Users/dylanm/repos/hippotechdemo/.git",
+        "Found executable: /usr/bin/git"
+      ],
+      "projectName": "dc-moses/hippotechdemo",
+      "projectVersion": "main",
+      "codeLocationCount": 0
+    }
+  ],
+  "status": [
+    {
+      "key": "GIT",
+      "status": "SUCCESS"
+    }
+  ],
+  "issues": [],
+  "overallStatus": [
+    {
+      "key": "SUCCESS",
+      "status": "Detect exited successfully."
+    }
+  ],
+  "results": [],
+  "unrecognizedPaths": {},
+  "codeLocations": [],
+  "propertyValues": {
+    "blackduck.offline.mode": "true",
+    "blackduck.offline.mode.force.bdio": "true",
+    "detect.bdio.file.name": "scan",
+    "detect.bdio.output.path": "/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/bdio/blackduck_artifact",
+    "detect.cleanup": "false",
+    "detect.excluded.directories": "/Users/dylanm/repos/hippotechdemo/.bridge",
+    "detect.output.path": "/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect",
+    "detect.tools": "DETECTOR"
+  },
+  "operations": [
+    {
+      "startTimestamp": "2023-10-26 19:25:10.493",
+      "endTimestamp": "2023-10-26 19:25:10.744",
+      "descriptionKey": "Execute Detectors",
+      "status": "SUCCESS"
+    },
+    {
+      "startTimestamp": "2023-10-26 19:25:10.746",
+      "endTimestamp": "2023-10-26 19:25:10.747",
+      "descriptionKey": "SubProject Aggregate",
+      "status": "SUCCESS"
+    }
+  ]
+}

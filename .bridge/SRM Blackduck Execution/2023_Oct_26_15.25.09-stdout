@@ -1,0 +1,81 @@
+blackduck-execution /var/folders/hd/v3_ktty91qd7cxdgpj1pkx9r0000gq/T/tempDir1473269619/data.json
+{"level":"info","logger":"Blackduck Execution","msg":"Running command /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java -jar /Users/dylanm/.synopsys/bridge/tools/synopsys-detect/9.0.0/synopsys-detect-9.0.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect --detect.tools=DETECTOR --blackduck.offline.mode=true --blackduck.offline.mode.force.bdio=true","time":"2023-10-26 15:25:09.3141 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"warning","logger":"Blackduck Execution","msg":"--- Detect-Self-Updater:  Self-Update feature is disabled because of the following reasons:","time":"2023-10-26 15:25:09.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"warning","logger":"Blackduck Execution","msg":"--- Detect-Self-Updater:  Detect in offline mode is incompatible with the Self-Update feature.","time":"2023-10-26 15:25:09.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"warning","logger":"Blackduck Execution","msg":"--- Detect-Self-Updater:  Black Duck URL is required for the Self-Update feature.","time":"2023-10-26 15:25:09.0000 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"______     _            _","time":"2023-10-26 15:25:10.2073 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"|  _  \\   | |          | |","time":"2023-10-26 15:25:10.2074 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"| | | |___| |_ ___  ___| |_","time":"2023-10-26 15:25:10.2074 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"| | | / _ \\ __/ _ \\/ __| __|","time":"2023-10-26 15:25:10.2074 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"| |/ /  __/ ||  __/ (__| |_","time":"2023-10-26 15:25:10.2075 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"|___/ \\___|\\__\\___|\\___|\\__|","time":"2023-10-26 15:25:10.2075 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"","time":"2023-10-26 15:25:10.2075 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"","time":"2023-10-26 15:25:10.3083 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"Detect Version: 9.0.0","time":"2023-10-26 15:25:10.3084 EDT"}
+{"external_parsed":true,"level":"info","logger":"Blackduck Execution","msg":"","time":"2023-10-26 15:25:10.3084 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Current property values:","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- --property = value [notes]","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ------------------------------------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- blackduck.offline.mode = true [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- blackduck.offline.mode.force.bdio = true [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.bdio.file.name = scan [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.bdio.output.path = /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/bdio/blackduck_artifact [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.cleanup = false [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.excluded.directories = /Users/dylanm/repos/hippotechdemo/.bridge [env] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.output.path = /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- detect.tools = DETECTOR [cmd] ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ------------------------------------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Detect build date: 2023-09-12","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Source directory: /Users/dylanm/repos/hippotechdemo","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Output directory: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Run directory: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/runs/2023-10-26-19-25-10-280","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Docker tool will not be run.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Bazel tool will not be run.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Will include the Detectors tool.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Searching for detectors.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Evaluating detectors. This may take a while.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Running executable \u003e/usr/bin/git config --get remote.origin.url","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Process return code: 0","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Running executable \u003e/usr/bin/git rev-parse --abbrev-ref HEAD","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Process return code: 0","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Running executable \u003e/usr/bin/git rev-parse HEAD","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Process return code: 0","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ======================================================================================================","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Detector Report","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ======================================================================================================","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- \t/Users/dylanm/repos/hippotechdemo (depth 0)","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- \t\tGit: SUCCESS","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- \t\t\tFound file: /Users/dylanm/repos/hippotechdemo/.git","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- \t\t\tFound executable: /usr/bin/git","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Detectors actions finished.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Project name: dc-moses/hippotechdemo","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Project version: main","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Signature Scanner tool will not be run.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Vulnerability Impact Analysis tool will not be run.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ----------------------------------","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- IaC Scanner tool will not be run.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Creating status file: /Users/dylanm/repos/hippotechdemo/.bridge/SRM Blackduck Execution/detect/runs/2023-10-26-19-25-10-280/status/status.json","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Skipping cleanup, it is disabled.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ======== Detect Status ========","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- GIT: SUCCESS","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Overall Status: SUCCESS - Detect exited successfully.","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ===============================","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- ","time":"2023-10-26 15:25:10.0000 EDT"}
+{"external_parsed":true,"extras":["main"],"level":"info","logger":"Blackduck Execution","msg":"--- Detect duration: 00h 00m 00s 556ms","time":"2023-10-26 15:25:10.0000 EDT"}

@@ -1,0 +1,17 @@
+{
+    "data": {
+      "srm": {
+        "url": "https://con05.srm.synopsys.com/",
+        "apiKey": "api-key:hsCYd6T2S6LtWG5DRXe5KvNgkz6f8XWVua9BKSjz",
+        "project": {
+          "name": "HIPPOTECHDEMO"
+        },
+        "assessment": {
+            "types": [
+              "sast",
+              "sca"    
+            ]
+          }
+      }
+  }
+}
