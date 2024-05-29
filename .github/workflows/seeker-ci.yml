@@ -52,7 +52,8 @@ jobs:
         uses: cypress-io/github-action@v2
 
       - name: Shut Down HippoTech App
-        run: ./scripts/stop.sh
+        working-directory: ./java-api
+        run: ./stop.sh
 
       - name: Generate Seeker Reports
         run: |
