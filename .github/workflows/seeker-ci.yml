@@ -34,9 +34,28 @@ jobs:
         working-directory: ./java-api
         run: mvn -DskipTests=true package
 
+      - name: Release
+        uses: djnicholson/release-action@v2.11
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-name: 'v2.0'
+          tag-name: 'v2.0'
+          asset-name: 'api.jar'
+          file: 'java-api/target/api.jar'
+
+      - name: Check whether Seeker is enabled
+        id: seeker-check
+        shell: bash
+        run: |
+          if [ "${{ vars.SEEKER_SCAN_REQUIRED }}" == 'true' ]; then
+            echo "enabled=true" >> $GITHUB_OUTPUT;
+          else
+            echo "enabled=false" >> $GITHUB_OUTPUT;
+          fi
+
       - name: Add Seeker Agent
         run: |
-          sh -c "$(curl -X GET -fsSL --header 'Accept: application/x-sh'$SEEKER_SERVER_URL'/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&      flavor=DEFAULT&agentName=&accessToken=')"
+          sh -c "$(curl -X GET -fsSL --header 'Accept: application/x-sh'$SEEKER_SERVER_URL'/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&flavor=DEFAULT&agentName=&accessToken=')"
           echo "JAVA_TOOL_OPTIONS=-javaagent:./seeker/seeker-agent.jar" >> $GITHUB_ENV
 
       - name: Start HippoTech App for Testing
