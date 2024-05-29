@@ -31,6 +31,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build with Maven
+        working-directory: ./java-api
         run: mvn -DskipTests=true package
 
       - name: Add Seeker Agent
