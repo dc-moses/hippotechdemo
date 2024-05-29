@@ -40,7 +40,8 @@ jobs:
           echo "JAVA_TOOL_OPTIONS=-javaagent:./seeker/seeker-agent.jar" >> $GITHUB_ENV
 
       - name: Start HippoTech App for Testing
-        run: ./scripts/start.sh
+        working-directory: ./java-api
+        run: ./start.sh
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v2
