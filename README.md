@@ -89,7 +89,7 @@ There's a **SUBSCRIBE** button on the Blog home page: this will give you the opp
 There are three blog posts, of which you can see a summary on the Blog home page. If you click **continue reading** you will be taken to the full blog post.
 
 #### Comments
-
+Test
 Once you navigate to the full blog post, you will see any comments that have been left on that post by HippoTech's highly-engaged customer community. If you're logged in, you will also have the opportunity to leave your own comments. But please keep them respectful!
 
 Test. File.
