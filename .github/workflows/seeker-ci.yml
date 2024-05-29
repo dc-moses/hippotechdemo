@@ -90,14 +90,12 @@ jobs:
 
       - name: Generate Seeker Reports
         run: |
-          curl -s -X 'GET' $SEEKER_SERVER_URL'/rest/api/latest/reports/compliances/\export?projectKeys='$SEEKER_PROJECT_KEY \
-          -H 'accept: application/pdf' \
-          -H "Authorization: ${{ secrets.SEEKER_API_TOKEN }}" \
-          -H 'RequestSource: swagger' --output compliance-report.pdf
-          curl -s -X 'GET' $SEEKER_SERVER_URL'/rest/api/latest/vulnerabilities?\format=JSON&projectKeys='$SEEKER_PROJECT_KEY'&statuses=DETECTED&&minSeverity=HIGH' \
-          -H 'accept: text/plain' \
-          -H "Authorization: ${{ secrets.SEEKER_API_TOKEN }}" \
-          -H 'RequestSource: swagger' | jq 'map(.ItemKey + " " + .VulnerabilityName + " URL:" + .SeekerServerLink)'
+          curl -s -X 'GET' \
+          $SEEKER_SERVER_URL'/rest/api/latest/vulnerabilities?format=JSON&language=en&projectKeys='$SEEKER_PROJECT_KEY'&statuses=DETECTED&minSeverity=HIGH' \
+            -H 'accept: text/plain' \
+            -H "Authorization: ${{ secrets.SEEKER_API_TOKEN }}" \
+            -H 'RequestSource: swagger' | jq 'map(.ItemKey + " " \
+              + .VulnerabilityName + " URL: " + .SeekerServerLink)'
       
       - name: Publish Seeker Reports
         uses: actions/upload-artifact@v3
