@@ -67,7 +67,7 @@ jobs:
 
       - name: Add Seeker Agent
         run: |
-          sh -c "$(curl -X GET -fsSL --header 'Accept: application/x-sh'$SEEKER_SERVER_URL'/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&flavor=DEFAULT&agentName=&accessToken=')"
+          sh -c "$( curl -k -X GET -fsSL --header 'Accept: application/x-sh' 'https://testing.seeker.synopsys.com/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&flavor=DEFAULT&agentName=&accessToken=')"
           echo "JAVA_TOOL_OPTIONS=-javaagent:./seeker/seeker-agent.jar" >> $GITHUB_ENV
 
       - name: Start HippoTech App for Testing
