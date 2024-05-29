@@ -95,7 +95,7 @@ jobs:
             -H 'accept: text/plain' \
             -H "Authorization: ${{ secrets.SEEKER_API_TOKEN }}" \
             -H 'RequestSource: swagger' | jq 'map(.ItemKey + " " \
-              + .VulnerabilityName + " URL: " + .SeekerServerLink)'
+               + .VulnerabilityName + " URL: " + .SeekerServerLink)'
       
       - name: Publish Seeker Reports
         uses: actions/upload-artifact@v3
