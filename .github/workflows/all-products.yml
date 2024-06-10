@@ -240,6 +240,13 @@ jobs:
             target-branch-name: ${{ github.ref_name }}              
             #source-and-binaries-glob: './**'      # commenting it out to test a different SRM server. This may not be correct. 
             wait-for-completion: true
+
+#        - name: SRM Compliance Check
+#          run: |
+#            curl -s -X 'GET' \
+#            $SRM_URL'srm/x/projects/$SRM_Project_ID/policies/$SRM_BreakBuild_Policy/build-broken' \
+#              -H 'accept: application/json' \
+#              -H "Authorization: ${{ secrets.SRM_API_TOKEN }}" \
 #        - name: Save Logs
 #          if: always()
 #          uses: actions/upload-artifact@v4
