@@ -38,7 +38,7 @@ jobs:
               -H 'Content-Type: application/json' \
               -d '{
               "filter": {
-                "name": "WebGoat" 
+                "name": "${{ github.event.repository.name }}" 
               }
             }' | jq -r '.projectId')
             echo "::set-output name=SRM_Project_ID::$SRM_Project_ID"
