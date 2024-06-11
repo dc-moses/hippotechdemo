@@ -37,8 +37,11 @@ jobs:
               -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
               -H 'Content-Type: */*' \
               -d '{"filter":{"name":"WebGoat"}}'`| jq '.projectId'
-              
-              echo  $SRM_Project_ID
+
+        - name: Echo Project ID
+          shell: bash
+          run: |
+            echo $SRM_Project_ID
             
 # Will check to see if the Project is compliant with a specific policy
         - name: SRM Compliance Check
