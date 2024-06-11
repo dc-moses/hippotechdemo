@@ -28,29 +28,28 @@ jobs:
       $SRM_BreakBuild_Policy: any
       
     steps:
-# Will retrieve the SRM Project ID for a project       
         - name: Get SRM Project ID
+          id: get_srm_project_id
           run: |
-            SRM_Project_ID=`curl -s -v -X 'POST' \
+            SRM_Project_ID=$(curl -s -v -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
-              -H 'accept: application/json' \
+              -H 'accept: */*' \
               -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
               -H 'Content-Type: application/json' \
               -d '{
               "filter": {
                 "name": "WebGoat" 
               }
-            }'` | jq '.projectId'
+            }' | jq -r '.projectId')
+            echo "::set-output name=SRM_Project_ID::$SRM_Project_ID"
 
         - name: Echo Project ID
-          shell: bash
           run: |
-            echo $SRM_Project_ID
-            
-# Will check to see if the Project is compliant with a specific policy
+            echo "${{ steps.get_srm_project_id.outputs.SRM_Project_ID }}"
+
         - name: SRM Compliance Check
           run: |
             curl -s -X 'GET' \
-            'https://testing.srm.synopsys.com/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+            'https://testing.srm.synopsys.com/srm/x/projects/${{ steps.get_srm_project_id.outputs.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
               -H 'accept: application/json' \
-              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
+              -H "Authorization: ${{ secrets.SRM_APIKEY }}"
