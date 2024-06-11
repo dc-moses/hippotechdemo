@@ -32,7 +32,7 @@ jobs:
         - name: Get SRM Project ID
           run: |
             SRM_Project_ID=`curl -X 'POST' \
-            $SRM_URL'/api/projects/query' \
+            'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: */*' \
               -H 'Content-Type: */*' \
               -d '{ "filter": { "name": "WebGoat" }}'`| jq '.id'
@@ -42,6 +42,6 @@ jobs:
         - name: SRM Compliance Check
           run: |
             curl -s -X 'GET' \
-            $SRM_URL'/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+            'https://testing.srm.synopsys.com/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
               -H 'accept: application/json' \
               -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
