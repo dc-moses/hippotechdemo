@@ -31,7 +31,7 @@ jobs:
         - name: Get SRM Project ID
           id: get_srm_project_id
           run: |
-            SRM_Project_ID=$(curl -s -v -X 'POST' \
+            SRM_Project_ID=$(curl -s -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: */*' \
               -H "API-Key: ${{ secrets.SRM_APIKEY }}" \
