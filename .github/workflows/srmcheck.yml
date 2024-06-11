@@ -46,7 +46,16 @@ jobs:
 
         - name: SRM Compliance Check
           run: |
-            curl -s -X 'GET' \
+            COMPLIANCE=$(curl -s -X 'GET' \
             'https://testing.srm.synopsys.com/srm/x/projects/${{ env.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/${{ env.SRM_BreakBuild_Policy }}/build-broken' \
               -H 'accept: application/json' \
-              -H "API-Key: ${{ secrets.SRM_APIKEY }}"
+              -H "API-Key: ${{ secrets.SRM_APIKEY }}")
+            if [ "$COMPLIANCE" = "false" ]; then
+              echo "SRM Compliance Check Passed"
+            else
+              if [ "$SRM_COMPLIANCE_FAIL_BUILD" = "true" ]; then
+                echo "::error ::SRM compliance check failed." && exit 1
+              else
+                echo "::warning ::SRM compliance check failed."
+              fi
+            fi
