@@ -46,6 +46,6 @@ jobs:
         - name: SRM Compliance Check
           run: |
             curl -s -X 'GET' \
-            'https://testing.srm.synopsys.com/srm/x/projects/${{ steps.get_srm_project_id.outputs.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+            'https://testing.srm.synopsys.com/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
               -H 'accept: application/json' \
               -H "API-Key: ${{ secrets.SRM_APIKEY }}"
