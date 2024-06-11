@@ -40,7 +40,7 @@ jobs:
               "filter": {
                 "name": "hippotechdemo" 
               }
-            }' | jq -r '.projectId')
+            }' | jq -r '.id')
             echo "::set-output name=SRM_Project_ID::$SRM_Project_ID"
 
         - name: Echo Project ID
