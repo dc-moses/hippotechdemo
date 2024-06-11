@@ -34,8 +34,8 @@ jobs:
             SRM_Project_ID=$(curl -s -v -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: */*' \
-              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
-              -H 'Content-Type: application/json' \
+              -H "API-Key: ${{ secrets.SRM_APIKEY }}" \
+              -H 'Content-Type: */*' \
               -d '{
               "filter": {
                 "name": "hippotechdemo" 
@@ -52,4 +52,4 @@ jobs:
             curl -s -X 'GET' \
             'https://testing.srm.synopsys.com/srm/x/projects/${{ steps.get_srm_project_id.outputs.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
               -H 'accept: application/json' \
-              -H "Authorization: ${{ secrets.SRM_APIKEY }}"
+              -H "API-Key: ${{ secrets.SRM_APIKEY }}"
