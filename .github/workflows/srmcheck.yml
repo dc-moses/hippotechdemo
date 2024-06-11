@@ -41,11 +41,11 @@ jobs:
                 "name": "hippotechdemo" 
               }
             }' | jq -r '.[].projectId')
-            echo "::set-output name=SRM_Project_ID::$SRM_Project_ID"
+            echo "SRM_Project_ID: $SRM_Project_ID"
 
         - name: Echo Project ID
           run: |
-            echo "${{ steps.get_srm_project_id.outputs.SRM_Project_ID }}"
+            echo "$SRM_Project_ID"
 
         - name: SRM Compliance Check
           run: |
