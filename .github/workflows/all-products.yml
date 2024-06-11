@@ -249,23 +249,39 @@ jobs:
             #source-and-binaries-glob: './**'      # commenting it out to test a different SRM server. This may not be correct. 
             wait-for-completion: true
 
-# Will retrieve the SRM Project ID for a project       
+# Checks for SRM Project ID and sets env variable
         - name: Get SRM Project ID
+          id: get_srm_project_id
           run: |
-            SRM_Project_ID=`curl -X 'POST' \
-            $SRM_URL'/srm/api/projects/query' \
+            SRM_Project_ID=$(curl -s -X 'POST' \
+            'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: */*' \
+              -H "API-Key: ${{ secrets.SRM_APIKEY }}" \
               -H 'Content-Type: */*' \
-              -d '{ "filter": { "name": "WebGoat" }}'`| jq '.id'
-              echo  $SRM_Project_ID
-            
-# Will check to see if the Project is compliant with a specific policy
+              -d '{
+              "filter": {
+                "name": "HippotechDemo" 
+                }
+            }' | jq -r '.[0].id')
+            echo "SRM_Project_ID=$SRM_Project_ID" >> $GITHUB_ENV
+            echo $SRM_Project_ID
+
+# Check to see if we need to fail the build based off Seeker Compliance
         - name: SRM Compliance Check
           run: |
-            curl -s -X 'GET' \
-            $SRM_URL'/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+            COMPLIANCE=$(curl -s -X 'GET' \
+            'https://testing.srm.synopsys.com/srm/x/projects/${{ env.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/${{ env.SRM_BreakBuild_Policy }}/build-broken' \
               -H 'accept: application/json' \
-              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
+              -H "API-Key: ${{ secrets.SRM_APIKEY }}")
+            if [ "$COMPLIANCE" = "false" ]; then
+              echo "SRM Compliance Check Passed"
+            else
+              if [ "$SRM_COMPLIANCE_FAIL_BUILD" = "true" ]; then
+                echo "::error ::SRM compliance check failed." && exit 1
+              else
+                echo "::warning ::SRM compliance check failed."
+              fi
+            fi
 
 #        - name: Save Logs
 #          if: always()
