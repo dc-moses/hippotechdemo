@@ -48,6 +48,7 @@ jobs:
       SEEKER_SERVER_URL: ${{ vars.SEEKER_SERVER_URL }}
       SEEKER_PROJECT_KEY: ${{ vars.SEEKER_PROJECT_KEY }}
       SEEKER_SCAN_REQUIRED: ${{vars.SEEKER_SCAN_REQUIRED }}
+      $SRM_BreakBuild_Policy: any
       
     steps:
         - uses: actions/checkout@v2
@@ -133,6 +134,8 @@ jobs:
             coverity_stream_name: ${{ github.event.repository.name }}-${{ github.base_ref }}
             coverity_prComment_enabled: true
             github_token: ${{ secrets.GITHUB_TOKEN }}
+
+# Will kick off an analysis job in SRM to sync the latest scan results            
         - name: SRM Upload
           if: ${{ github.event_name == 'push' }}
           # if: ${{ github.event_name != 'pull_request' }}
@@ -148,6 +151,7 @@ jobs:
             target-branch-name: ${{ github.ref_name }}              
             #source-and-binaries-glob: './**'      # commenting it out to test a different SRM server. This may not be correct. 
             wait-for-completion: true
+            
 #        - name: Save Logs
 #          if: always()
 #          uses: actions/upload-artifact@v4
@@ -155,6 +159,7 @@ jobs:
 #            name: bridge-logs
 #            path: ${{ github.workspace }}/.bridge
 
+# Check to see if Seeker needs to be run for this project using an GitHub environment Variable
         - name: Check whether Seeker is enabled
           id: seeker-check
           shell: bash
@@ -165,6 +170,7 @@ jobs:
               echo "enabled=false" >> $GITHUB_OUTPUT;
               fi
 
+# Use Seeker API to download an agent for a Java Application and a speicfic Project Key
         - name: Add Seeker Agent
           run: |
             sh -c "$( curl -k -X GET -fsSL --header 'Accept: application/x-sh' 'https://testing.seeker.synopsys.com/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&flavor=DEFAULT&agentName=&accessToken=')"
@@ -203,6 +209,7 @@ jobs:
             path: |
               compliance-report.pdf
 
+# Checks to see if there are any compliance issues with the Seeker run
         - name: Seeker Compliance Check
           run: |
             COMPLIANCE=`curl -s -X 'GET' \
@@ -225,6 +232,7 @@ jobs:
             report_paths: '**/results/*.xml'
             check_name: "test"
 
+# Kicks off an analysis for the project to sync results into SRM
         - name: SRM Upload
           if: ${{ github.event_name == 'push' }}
           # if: ${{ github.event_name != 'pull_request' }}
@@ -241,12 +249,26 @@ jobs:
             #source-and-binaries-glob: './**'      # commenting it out to test a different SRM server. This may not be correct. 
             wait-for-completion: true
 
-#        - name: SRM Compliance Check
-#          run: |
-#            curl -s -X 'GET' \
-#            $SRM_URL'srm/x/projects/$SRM_Project_ID/policies/$SRM_BreakBuild_Policy/build-broken' \
-#              -H 'accept: application/json' \
-#              -H "Authorization: ${{ secrets.SRM_API_TOKEN }}" \
+# Will retrieve the SRM Project ID for a project       
+        - name: Get SRM Project ID
+          run: |
+            ProjectID=$(curl -X 'POST' \
+            $SRM_URL'/srm/api/projects/query' \
+              -H 'accept: */*' \
+              -H 'Content-Type: */*' \
+              -d '{ "filter": { "name": "WebGoat" }}' | jq -r '.id')
+
+            echo  $ProjectID
+            export SRM_Project_ID ="$ProjectID"
+            
+# Will check to see if the Project is compliant with a specific policy
+        - name: SRM Compliance Check
+          run: |
+            curl -s -X 'GET' \
+            $SRM_URL'/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+              -H 'accept: application/json' \
+              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
+
 #        - name: Save Logs
 #          if: always()
 #          uses: actions/upload-artifact@v4
