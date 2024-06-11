@@ -33,10 +33,14 @@ jobs:
           run: |
             SRM_Project_ID=`curl -s -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
-              -H 'accept: */*' \
+              -H 'accept: application/json' \
               -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
-              -H 'Content-Type: */*' \
-              -d '{"filter":{"name":"WebGoat"}}'`| jq '.projectId'
+              -H 'Content-Type: application/json' \
+              -d '{
+              "filter": {
+                "name": "WebGoat" 
+              }
+            }'` | jq '.projectId'
 
         - name: Echo Project ID
           shell: bash
