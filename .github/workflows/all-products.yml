@@ -194,6 +194,7 @@ jobs:
           working-directory: ./java-api
           run: ./stop.sh
 
+# View Vulns in the workflow output where severity = High          
         - name: Generate Seeker Reports
           run: |
             curl -s -X 'GET' \
@@ -201,13 +202,6 @@ jobs:
               -H 'accept: text/plain' \
               -H "Authorization: ${{ secrets.SEEKER_API_TOKEN }}" \
               -H 'RequestSource: swagger' | jq 'map(.ItemKey + .VulnerabilityName + " URL: " + .SeekerServerLink)'
-      
-        - name: Publish Seeker Reports
-          uses: actions/upload-artifact@v3
-          with:
-            name: Seeker Compliance Reports
-            path: |
-              compliance-report.pdf
 
 # Checks to see if there are any compliance issues with the Seeker run
         - name: Seeker Compliance Check
