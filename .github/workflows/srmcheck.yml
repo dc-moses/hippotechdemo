@@ -38,14 +38,10 @@ jobs:
               -H 'Content-Type: application/json' \
               -d '{
               "filter": {
-                "name": "hippotechdemo" 
+                "name": "HippotechDemo" 
               }
             }' | jq -r '.[].projectId')
             echo "SRM_Project_ID: $SRM_Project_ID"
-
-        - name: Echo Project ID
-          run: |
-            echo "$SRM_Project_ID"
 
         - name: SRM Compliance Check
           run: |
