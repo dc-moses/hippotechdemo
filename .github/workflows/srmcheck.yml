@@ -1,0 +1,47 @@
+name: srm check
+on:
+  push:
+    branches: [ 6-Production, main, 1-SamShoberWork-PersonalBranch, 2-Feature-Branch, 4-Dev, 5-Testing, 3-Release-Branch ]
+  pull_request:
+    branches: [ 6-Production, main, 1-SamShoberWork-PersonalBranch ] ## , 2-Feature-Branch, 4-Dev, 5-Testing, 3-Release-Branch  ]
+  workflow_dispatch:
+jobs:
+  test-compose-action:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      id-token: write
+      issues: write
+      discussions: write
+      packages: write
+      repository-projects: write
+      security-events: write
+      statuses: write
+
+    env:
+      SEEKER_SERVER_URL: ${{ vars.SEEKER_SERVER_URL }}
+      SEEKER_PROJECT_KEY: ${{ vars.SEEKER_PROJECT_KEY }}
+      SEEKER_SCAN_REQUIRED: ${{vars.SEEKER_SCAN_REQUIRED }}
+      $SRM_BreakBuild_Policy: any
+      
+    steps:
+# Will retrieve the SRM Project ID for a project       
+        - name: Get SRM Project ID
+          run: |
+            SRM_Project_ID=`curl -X 'POST' \
+            $SRM_URL'/api/projects/query' \
+              -H 'accept: */*' \
+              -H 'Content-Type: */*' \
+              -d '{ "filter": { "name": "WebGoat" }}'`| jq '.id'
+              echo  $SRM_Project_ID
+            
+# Will check to see if the Project is compliant with a specific policy
+        - name: SRM Compliance Check
+          run: |
+            curl -s -X 'GET' \
+            $SRM_URL'/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+              -H 'accept: application/json' \
+              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
