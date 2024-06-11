@@ -34,8 +34,9 @@ jobs:
             SRM_Project_ID=`curl -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: */*' \
+              -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
               -H 'Content-Type: */*' \
-              -d '{"filter":{"name":"WebGoat"}}'`| jq '.id'
+              -d '{"filter":{"name":"WebGoat"}}'`| jq '.projectId'
               
               echo  $SRM_Project_ID
             
