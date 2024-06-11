@@ -42,6 +42,7 @@ jobs:
                 }
             }' | jq -r '.[0].id')
             echo "SRM_Project_ID=$SRM_Project_ID" >> $GITHUB_ENV
+            echo $SRM_Project_ID
 
         - name: SRM Compliance Check
           run: |
