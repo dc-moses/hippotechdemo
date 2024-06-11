@@ -252,14 +252,12 @@ jobs:
 # Will retrieve the SRM Project ID for a project       
         - name: Get SRM Project ID
           run: |
-            ProjectID=$(curl -X 'POST' \
+            SRM_Project_ID=`curl -X 'POST' \
             $SRM_URL'/srm/api/projects/query' \
               -H 'accept: */*' \
               -H 'Content-Type: */*' \
-              -d '{ "filter": { "name": "WebGoat" }}' | jq -r '.id')
-
-            echo  $ProjectID
-            export SRM_Project_ID ="$ProjectID"
+              -d '{ "filter": { "name": "WebGoat" }}'`| jq '.id'
+              echo  $SRM_Project_ID
             
 # Will check to see if the Project is compliant with a specific policy
         - name: SRM Compliance Check
