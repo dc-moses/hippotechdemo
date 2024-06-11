@@ -31,7 +31,7 @@ jobs:
 # Will retrieve the SRM Project ID for a project       
         - name: Get SRM Project ID
           run: |
-            SRM_Project_ID=`curl -s -o /dev/null -w "%{http_code}" -X 'POST' \
+            SRM_Project_ID=`curl -s -v -X 'POST' \
             'https://testing.srm.synopsys.com/srm/api/projects/query' \
               -H 'accept: application/json' \
               -H "Authorization: ${{ secrets.SRM_APIKEY }}" \
