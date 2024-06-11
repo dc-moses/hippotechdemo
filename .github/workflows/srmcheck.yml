@@ -25,7 +25,7 @@ jobs:
       SEEKER_SERVER_URL: ${{ vars.SEEKER_SERVER_URL }}
       SEEKER_PROJECT_KEY: ${{ vars.SEEKER_PROJECT_KEY }}
       SEEKER_SCAN_REQUIRED: ${{vars.SEEKER_SCAN_REQUIRED }}
-      $SRM_BreakBuild_Policy: any
+      SRM_BreakBuild_Policy: any
       
     steps:
         - name: Get SRM Project ID
@@ -41,11 +41,11 @@ jobs:
                 "name": "HippotechDemo" 
                 }
             }' | jq -r '.[0].id')
-            echo "SRM_Project_ID: $SRM_Project_ID"
+            echo "SRM_Project_ID=$SRM_Project_ID" >> $GITHUB_ENV
 
         - name: SRM Compliance Check
           run: |
             curl -s -X 'GET' \
-            'https://testing.srm.synopsys.com/srm/x/projects/$SRM_Project_ID;branch=${{ github.ref_name }}/policies/$SRM_BreakBuild_Policy/build-broken' \
+            'https://testing.srm.synopsys.com/srm/x/projects/${{ env.SRM_Project_ID }};branch=${{ github.ref_name }}/policies/${{ env.SRM_BreakBuild_Policy }}/build-broken' \
               -H 'accept: application/json' \
               -H "API-Key: ${{ secrets.SRM_APIKEY }}"
