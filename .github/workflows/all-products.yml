@@ -1,27 +1,26 @@
-# example workflow for standalone Black Duck, Coverity and SRM (Code DX) using GitHub Actions
+# - Example workflow for standalone Black Duck, Coverity, Seeker and SRM
 # - Black Duck and Coverity full scans on push to specified branches with upload to SRM
 # - Black Duck RAPID and Coverity Comparison scans on pull requests with PR comments enabled
-#  2024-04-30 - updated full scns modules to use   if: ${{ github.event_name == 'push' }}  instead of triggering on any non-PR event
+# - Seeker is run if needed on push events to specific branches
 #
-# https://github.com/marketplace/actions/synopsys-action
-# https://github.com/marketplace/actions/code-dx-analysis
-#
-#
-#  ENVIRONMENT VARIABLES AND SECRETS 
+# Required Environment variables and secrets
 # vars.BLACKDUCK_URL
 # secrets.BLACKDUCK_API_TOKEN
 # vars.COVERITY_URL
 # secrets.COV_USER
 # secrets.COVERITY_PASSPHRASE
+# vars.SEEKER_SERVER_URL
+# vars.SEEKER_PROJECT_KEY
+# vars.SEEKER_SCAN_REQUIRED
+# secrets.SEEKER_API_TOKEN 
 # vars.SRM_URL
+# vars.SRM_BreakBuild_Policy
 # secrets.SRM_APIKEY
 # secrets.GITHUB_TOKEN  #  Confirm GITHUB_TOKEN has workflow read & write permissions (GitHub → Project → Settings → Actions → General → Workflow Permissions)
 #
-# reversed order of maven build and clean git. not sure why, just seems like clean git should happen before the build
 # 
-# change to force github action for 1-SamShoberWork - 2024-05-01    7:03 pm
 #
-name: ci-all-products - no seeker action
+name: Synopsys Full Product Pipeline
 on:
   push:
     branches: [ 6-Production, main, 1-SamShoberWork-PersonalBranch, 2-Feature-Branch, 4-Dev, 5-Testing, 3-Release-Branch ]
@@ -48,7 +47,7 @@ jobs:
       SEEKER_SERVER_URL: ${{ vars.SEEKER_SERVER_URL }}
       SEEKER_PROJECT_KEY: ${{ vars.SEEKER_PROJECT_KEY }}
       SEEKER_SCAN_REQUIRED: ${{vars.SEEKER_SCAN_REQUIRED }}
-      $SRM_BreakBuild_Policy: any
+      SRM_BreakBuild_Policy: any
       
     steps:
         - uses: actions/checkout@v2
@@ -78,7 +77,8 @@ jobs:
             tag-name: 'v2.0'
             asset-name: 'api.jar'
             file: 'java-api/target/api.jar'
-          
+
+# This step performs a Black Duck scan on push events
         - name: Black Duck Full Scan
           if: ${{ github.event_name == 'push' }}
           # if: ${{ github.event_name != 'pull_request' }}
@@ -96,6 +96,8 @@ jobs:
             # blackduck_reports_sarif_create: true
             # blackduck_upload_sarif_report: true
             # github_token: ${{ secrets.GITHUB_TOKEN }}
+
+# This step performs a Black Duck scan on pull request events
         - name: Black Duck PR Scan
           if: ${{ github.event_name == 'pull_request' }}
           uses: synopsys-sig/synopsys-action@v1.9.0
@@ -112,6 +114,8 @@ jobs:
             blackduck_reports_sarif_create: true
             blackduck_upload_sarif_report: true
             github_token: ${{ secrets.GITHUB_TOKEN }}
+        
+# This step performs a full Coverity scan on push events
         - name: Coverity Full Scan
           if: ${{ github.event_name == 'push' }}
           # if: ${{ github.event_name != 'pull_request' }}
@@ -123,6 +127,8 @@ jobs:
             coverity_project_name: ${{ github.event.repository.name }}
             coverity_stream_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
             # coverity_policy_view: 'Outstanding Issues'
+
+# This step performs a Coverity scan on pull request events
         - name: Coverity PR Scan
           if: ${{ github.event_name == 'pull_request' }}
           uses: synopsys-sig/synopsys-action@v1.9.0
@@ -175,7 +181,8 @@ jobs:
           run: |
             sh -c "$( curl -k -X GET -fsSL --header 'Accept: application/x-sh' 'https://testing.seeker.synopsys.com/rest/api/latest/installers/agents/scripts/JAVA?osFamily=LINUX&downloadWith=curl&projectKey='$SEEKER_PROJECT_KEY'&webServer=OTHER&flavor=DEFAULT&agentName=&accessToken=')"
             echo "JAVA_TOOL_OPTIONS=-javaagent:./seeker/seeker-agent.jar" >> $GITHUB_ENV
-
+            
+# Add Seeker Java Options
         - name: Add Java agent
           if: ${{ steps.seeker-check.outputs.enabled == 'true' }}
           shell: bash
